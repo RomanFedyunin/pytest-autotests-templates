@@ -1,0 +1,40 @@
+{
+  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "7.10.0",
+    "generators": {
+      "petstore_async": {
+        "generatorName": "python",
+        "output": "./async_client/",
+        "inputSpec": "https://petstore3.swagger.io/api/v3/openapi.json",
+        "library": "asyncio",
+        "globalProperty": {
+          "modelDocs": false,
+          "apiTests": false,
+          "modelTests": false
+        },
+        "additionalProperties": {
+          "packageName": "petstore_async_api_client",
+          "packageVersion": "1.0.7"
+        }
+      },
+      "petstore_sync": {
+        "generatorName": "python",
+        "output": "./sync_client/",
+        "inputSpec": "https://petstore3.swagger.io/api/v3/openapi.json",
+        "library": "urllib3",
+        "globalProperty": {
+          "modelDocs": false,
+          "apiTests": false,
+          "modelTests": false
+        },
+        "additionalProperties": {
+          "packageName": "petstore_sync_api_client",
+          "packageVersion": "1.0.7"
+        }
+      }
+
+    }
+  }
+}
