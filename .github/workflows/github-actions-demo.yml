@@ -8,8 +8,8 @@ on:
         required: true
         type: choice
         options:
-          - Ubuntu
-          - macOS
+          - ubuntu-latest
+          - macos-latest
 
 jobs:
   run_tests:
