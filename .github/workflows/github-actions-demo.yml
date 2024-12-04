@@ -17,6 +17,8 @@ jobs:
     container:
       image: python:3.12
     steps:
+      - name: Checkout️
+        uses: actions/checkout@v4
       - run: pip install poetry
       - run: poetry install
       - run: poetry run pytest
