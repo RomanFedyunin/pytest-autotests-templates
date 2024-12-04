@@ -1,0 +1,22 @@
+name: Run Tests
+
+run-name: ${{ github.actor }} is executing tests
+on:
+  workflow_dispatch:
+    inputs:
+      chosen-os:
+        required: true
+        type: choice
+        options:
+          - Ubuntu
+          - macOS
+
+jobs:
+  run_tests:
+    runs-on: ["${{ inputs.chosen-os }}"]
+    container:
+      image: python:3.12
+    steps:
+      - run: pip install poetry
+      - run: poetry install
+      - run: poetry run pytest
