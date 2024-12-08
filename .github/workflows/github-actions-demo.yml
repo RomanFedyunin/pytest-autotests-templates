@@ -17,4 +17,6 @@ jobs:
     steps:
       - name: Checkout️
         uses: actions/checkout@v4
-      - run: cd .docker && docker compose up
+      - run: cd .docker && docker compose up -d
+      - run: docker wait pytest
+      - run: docker compose down
