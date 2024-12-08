@@ -12,13 +12,9 @@ on:
           - macos-latest
 
 jobs:
-  run_tests:
+  start_app_and_run_tests:
     runs-on: ["${{ inputs.chosen-os }}"]
-    container:
-      image: python:3.12
     steps:
       - name: Checkout️
         uses: actions/checkout@v4
-      - run: pip install poetry
-      - run: poetry install
-      - run: poetry run pytest
+      - run: cd .docker && docker compose up

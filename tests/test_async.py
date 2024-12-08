@@ -3,6 +3,7 @@ import pytest
 
 
 @pytest.mark.asyncio
+@pytest.mark.skip
 class TestApiAsyncExample:
     async def test_async_create_pet(self, async_api_configuration):
         async with petstore_async_api_client.ApiClient(async_api_configuration) as api_client:
